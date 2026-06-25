@@ -195,7 +195,7 @@ function Home() {
             >
               {createMut.isPending ? (
                 <>
-                  <Sparkles className="size-5 animate-pulse" />
+                  <Sparkles className="size-5 animate-pulse cursor-not-allowed" />
                   Creating…
                 </>
               ) : (
