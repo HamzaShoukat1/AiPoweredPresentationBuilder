@@ -32,10 +32,10 @@ export const updatePresentation = createServerFn({ method: "POST" }).inputValida
         where: { id, userId }
     });
     if (!existPresentation) throw new Error("Presentation not found")
-    const updatePresentation = patch
+    const updateData = patch
     return prisma.presentation.update({
         where: { id },
-        data: updatePresentation
+        data: updateData
     })
 
 
@@ -47,11 +47,11 @@ export const deletePresentation = createServerFn({ method: "POST" }).inputValida
         where: { id, userId }
     });
     if (!existPresentation) throw new Error("Presentation not found")
-    const deletedPresentation  = await prisma.presentation.delete({
+    const deletedPresentation = await prisma.presentation.delete({
         where: { id }
     })
     return deletedPresentation
-   
+
 
 
 });
